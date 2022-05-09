@@ -1,0 +1,137 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "version": "1.0.6",
+        "title": "Aws-chime",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "sanny.kumar@oodles.io"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000/",
+    "basePath": "api/v1/",
+
+    "tags": [{
+        "name": "Chime APIs",
+        "description": "Everything about chime APIs"
+    }],
+    "schemes": ["http"],
+    "paths": {
+        "/meeting": {
+            "post": {
+                "tags": ["Chime APIs"],
+                "summary": "getting a meeting Id",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }
+                }
+            }
+        },
+        "/meeting/{meeting_id}": {
+            "get": {
+                "tags": ["Chime APIs"],
+                "summary": "Get all details of meeting",
+                "operationId": "getStatus",
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "name": "meeting_id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }                 
+                }
+            }
+        },
+        "/attendee": {
+            "post": {
+                "tags": ["Chime APIs"],
+                "summary": "Getting a  attendee Id ",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/attendee/{attendeeId}": {
+            "get": {
+                "tags": ["Chime APIs"],
+                "summary": "Get all details of attendee",
+                "operationId": "getStatus",
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "name": "attendeeId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    }                 
+                }
+            }
+        },
+        "/alldata": {
+            "post": {
+                "tags": ["Chime APIs"],
+                "summary": "Getting all data ",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }
+
+
+        
+    
+    }
+}
